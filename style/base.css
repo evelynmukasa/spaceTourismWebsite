@@ -1,0 +1,141 @@
+:root{
+    --color-secondary:#D0D6F9;
+    --color-tertiary:#0B0D17;
+    --color-primary:#FFFFFF;
+    --blur:rgba(255, 255, 255, 0.04);
+ }
+ @font-face {
+    font-family: 'Barlow Condensed';
+    src: url('../fonts/BarlowCondensed-Regular.ttf');
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Barlow Condensed';
+    src: url('../fonts/BarlowCondensed-Bold.ttf');
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Bellefair';
+    src: url('../fonts/Bellefair-Regular.ttf');
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.heading1{
+    color: #FFF;
+    font-family: 'Bellefair';
+    font-size: 150px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-transform: uppercase;
+}
+.heading2{
+    color: #FFF;
+    font-family: 'Bellefair';
+    font-size: 100px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-transform: uppercase;
+}
+@media(min-width: 767px){
+    .heading2{
+        font-size: 150px;
+    }
+
+}
+.heading3{
+    color: #FFF;
+    font-family: 'Bellefair';
+    font-size: 56px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-transform: uppercase;
+}
+.heading4{
+    color: #FFF;
+    font-family: 'Bellefair';
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-transform: uppercase;
+}
+.heading5{
+    color: #D0D6F9;
+    font-family: 'Barlow Condensed';
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 4.725px;
+    text-transform: uppercase;
+}
+.subheading1{
+    color: #FFF;
+    font-family: 'Bellefair';
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-transform: uppercase;
+}
+.subheading2{
+    color: #FFF;
+    font-family: 'Barlow Condensed';
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 2.362px;
+    text-transform: uppercase;
+}
+main  h5{
+    color: #FFF;
+    font-family: Barlow Condensed;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 2.7px;
+    text-transform: uppercase;
+}
+
+@media(max-width: 767px){
+    .d-md-none{
+        display: none;
+    }
+}
+.d-none{
+    display: none;
+}
+p{
+    color:var(--color-primary);
+    font-family: 'Barlow Condensed';
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 32px; /* 177.778% */
+}
+.destParagraph{
+    color: #D0D6F9;
+    text-align: center;
+    font-family:'Barlow Condensed';
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 25px; /* 166.667% */
+}

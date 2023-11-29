@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Space tourism website</title>
+  <link rel="stylesheet" href="./style/base.css">
+  <link rel="stylesheet" href="./style/nav.css">
+  <link rel="stylesheet" href="./style/crew.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">
+        <a href=""><img src="images/logo.svg" alt="logo"></a>
+      </div> 
+      
+      <a href="" class="hamburger"><img src="images/hamburger.svg" alt="menu"></a>
+      <div class="menu d-md-none">
+        <hr>
+        <a href="" class="close"><img src="images/close.svg" alt="close"></a>
+        <ul>
+          <li><a href="index.html"><span>00</span>Home</a></li>
+          <li><a href="destination.html"><span>01</span>Destination</a></li>
+          <li class="active"><a href="crew.html"><span>02</span>Crew</a></li>
+          <li><a href="technology.html"><span>03</span>Technology</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+  <main>
+    <h5 class=""><span>02</span> Meet your crew</h5>
+    <div class="mainDiv">
+      <div class="imgDiv">
+        <img src="assets/crew/image-douglas-hurley.webp" alt="">
+      </div>
+      <div class="textDiv">
+        <div class="swipeDots">
+          <div class="dot active"></div>
+          <div class="dot"></div>
+          <div class="dot"></div>
+          <div class="dot"></div>
+        </div>
+        <div class="descr">
+          <h4>Commander</h4>
+          <h3>Douglas Hurley</h3>
+          <p>  Douglas Gerald Hurley is an American engineer, former Marine Corps pilot 
+            and former NASA astronaut. He launched into space for the third time as 
+            commander of Crew Dragon Demo-2.
+          </p>
+        </div>
+      </div>
+    </div>
+  </main>
+</body>
+<script src="scripts/nav.js"></script>
+<script>
+  const dots = document.querySelectorAll('.dot');
+  const descr = document.querySelector('.descr');
+  const img = document.querySelector('.imgDiv img');
+  const swipeDots = document.querySelector('.swipeDots');
+  const dotArr = Array.from(dots);
+   
+   class CrewMember{
+    constructor(title,name,descr,img){
+      this.title=title,
+      this.name=name,
+      this.descr=descr,
+      this.img=img
+    }
+   }
+   
+   const commander=new CrewMember('Commander','Douglas Hurley','Douglas Gerald Hurley is an American engineer, former Marine Corps pilot and former NASA astronaut. He launched into space for the third time as commander of Crew Dragon Demo-2.','assets/crew/image-douglas-hurley.webp');
+   const specialist=new CrewMember('Pilot','Mark Shuttleworth','Mark Richard Shuttleworth is the founder and CEO of Canonical, the company behind the Linux-based Ubuntu operating system. Shuttleworth became the first South African to travel to space as a space tourist.','assets/crew/image-mark-shuttleworth.webp');
+   const pilot=new CrewMember('Mission Specialist','Victor Glover','Pilot on the first operational flight of the SpaceX Crew Dragon to the International Space Station. Glover is a commander in the U.S. Navy where he pilots an F/A-18.He was a crew member of Expedition 64, and served as a station systems flight engineer.','assets/crew/image-victor-glover.webp');
+   const engineer=new CrewMember('Flight Engineer','Anousheh Ansari','Anousheh Ansari is an Iranian American engineer and co-founder of Prodea Systems. Ansari was the fourth self-funded space tourist, the first self-funded woman to fly to the ISS, and the first Iranian in space.','assets/crew/image-anousheh-ansari.webp');
+
+   const crew=[commander,specialist,pilot,engineer];
+
+   let index=0;
+   let intervalId = startInterval();
+    
+   dots.forEach((dot,dotIndex)=>{
+     dot.addEventListener('click',()=>{
+      clearInterval(intervalId);
+      index=dotIndex;
+      changeContent(dotIndex);
+      intervalId = startInterval();
+     })
+   })
+   
+    function startInterval(){
+      return setInterval(()=>{
+        index=(index+1)%crew.length;
+        changeContent(index);
+       },3000)  
+      }
+
+   function changeContent(index){
+        dotArr.forEach((dot)=>{
+          dot.classList.remove('active');
+        })
+        dotArr[index].classList.add('active');
+        descr.children[0].innerHTML=crew[index].title;
+        descr.children[1].innerHTML=crew[index].name;
+        descr.children[2].innerHTML=crew[index].descr;
+        img.src=crew[index].img;
+    }
+
+
+
+</script>
+</html>

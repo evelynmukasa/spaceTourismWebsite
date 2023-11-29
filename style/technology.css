@@ -1,0 +1,265 @@
+main{
+    position:absolute;
+    top:0;
+    background-image: url('../assets/technology/background-technology-mobile.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100vw;
+    padding: 12.39vh 0 14.647vh 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-x: hidden;
+}
+@media(min-width:767px){
+    main{
+        background-image: url('../assets/technology/background-technology-tablet.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        padding: 136px 0 10vh 0;
+    }
+}
+@media (min-width:1023px) {
+    main{
+        background-image: url('../assets/technology/background-technology-desktop.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        padding: 212px  0  11.22vh 11.458% ;
+    }
+    
+}
+main h5{
+    margin-bottom: 4.79vh;
+    
+}
+main h5 span{
+    opacity: 0.25;
+    font-weight: 700;
+}
+@media(min-width:767px){
+    main h5{
+        display: block;
+        width: 100%;
+        text-align: left;
+        margin:0 0 6vh 0;
+        /* 5.013% */
+        font-size: 20px;
+        padding-left:5.013% ;
+    }
+}
+@media(min-width:1023px){
+    main h5{
+        margin-bottom: -30px;
+        display: inline;
+        font-size: 28px;
+        padding-left:0 ;
+    }
+}
+main .mainDiv{
+    width: 100%;
+
+}
+@media(min-width:1023px) {
+    main .mainDiv{
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+    }
+}
+main .mainDiv .imgDiv{
+    width: 100%;
+    margin-bottom: 5.09vh;
+}
+@media(min-width:767px) {
+    main .mainDiv .imgDiv{
+        margin-bottom: 5.8vh;
+    }
+}
+
+@media(min-width:1023px){
+    main .mainDiv .imgDiv{
+        margin-bottom: 0;
+        width: 40.39%;
+    }
+}
+main .mainDiv img{
+    width: 100%;
+    aspect-ratio: calc(375/170);
+}
+@media(min-width:1023px) {
+    main .mainDiv img{
+        /* content: url('../assets/technology/image-launch-vehicle-portrait.jpg'); */
+         aspect-ratio:calc(515/527);
+    }
+}
+main .mainDiv .textDiv{
+    margin: 0 6.4% 0 6.4%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+@media(min-width:767px) {
+    main .mainDiv .textDiv{
+        margin: 0 20.18% 0 20.18%;
+    }
+}
+@media(min-width:1023px){
+    main .mainDiv .textDiv{
+        width:47.137%;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        margin: 0;
+    }
+}
+main .mainDiv .textDiv .swipeNum{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 6.59vh;
+}
+@media(min-width:767px) {
+    main .mainDiv .textDiv .swipeNum{
+        margin-bottom: 4.6vh;
+    }
+}
+@media(min-width:1023px){
+    main .mainDiv .textDiv .swipeNum{
+        flex-direction: column;
+        width: 13.33%; 
+        margin: 0;
+        
+        
+    }
+}
+main .mainDiv .textDiv .swipeNum button{
+    width: 18.34%;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    outline: none;
+    border: 2px solid rgba(255, 255, 255, 0.25);
+    background-color: transparent;
+    font-size: 24px;
+    font-family:'Bellefair';
+    color: #FFF; 
+    margin: 0 4.89% 0 0;
+}
+@media(min-width:767px) {
+    main .mainDiv .textDiv .swipeNum button{
+        width: 13.100%;
+        margin: 0 3.493% 0 0;
+    }
+}
+@media(min-width:1023px){
+    main .mainDiv .textDiv .swipeNum button{
+        width: 100%;
+        margin: 0 0 32px 0 ;
+    }
+    main .mainDiv .textDiv .swipeNum button:nth-child(3){
+        margin: 0;
+    }
+}
+main .mainDiv .textDiv .swipeNum button:hover{
+    border: 2px solid rgba(255, 255, 255, 0.5);
+}
+main .mainDiv .textDiv .swipeNum button.active{
+    color: var(--color-tertiary);
+    background-color: #FFF;
+    position: relative;
+}
+
+main .mainDiv .textDiv .swipeNum button.active::before {
+    content: "";
+    position: absolute;
+    top: -23%;
+    left: -23%;
+    width: 146%; 
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255,1);
+    opacity: 0;
+    transition: opacity 0.5s;
+  }
+    @media(min-width: 767px){
+        main .hero button::before {
+            top: -31.81%;
+            left: -31.81%;
+            width: 163.63%; 
+
+        }
+    }
+
+    main .mainDiv .textDiv .swipeNum button.active:hover::before  {
+    opacity:0.1034;
+  }
+
+
+@media(min-width:1023px) {
+    main .mainDiv .textDiv .descr{
+        width: 78.33%;
+
+    }
+}
+main .mainDiv .textDiv h5{
+    font-size: 14px;
+    text-align: center;
+    margin-bottom: 1.349vh;
+}
+@media(min-width:767px) {
+    main .mainDiv .textDiv h5{
+        font-size: 16px;
+        margin-bottom: 1.9vh;
+    }
+}
+@media(min-width:1023px){
+    main .mainDiv .textDiv h5{
+        text-align: left;
+    }
+}
+main .mainDiv .textDiv h3{
+    text-align: center;
+    color: #FFF;
+    text-align: center;
+    font-family: Bellefair;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-transform: uppercase;
+    margin-bottom: 2.398vh;
+}
+@media(min-width:767px) {
+    main .mainDiv .textDiv h3{
+        font-size: 40px;
+        margin-bottom: 1.8vh;
+    }
+}
+@media(min-width:1023px){
+    main .mainDiv .textDiv h3{
+        font-size: 56px;
+        text-align: left;
+    }
+}
+main .mainDiv .textDiv p{
+    color: #D0D6F9;
+    text-align: center;
+    font-family: 'Barlow Condensed';
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 25px;
+}
+@media(min-width:767px) {
+    main .mainDiv .textDiv p{
+        font-size: 16px;
+        line-height: 28px;  
+
+    }
+}
+@media(min-width:1023px){
+    main .mainDiv .textDiv p{
+        text-align: left;
+    }
+}

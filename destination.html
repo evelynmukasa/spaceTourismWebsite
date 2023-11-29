@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
+  <link rel="stylesheet" href="style/nav.css">
+  <link rel="stylesheet" href="style/base.css">
+  <link rel="stylesheet" href="style/destination.css">
+  <!-- <link rel="stylesheet" href="style/moon.css"> -->
+  
+  <title>Frontend Mentor | Space tourism website</title>
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">
+        <a href=""><img src="images/logo.svg" alt="logo"></a>
+      </div> 
+      
+      <a href="" class="hamburger"><img src="images/hamburger.svg" alt="menu"></a>
+      <div class="menu d-md-none">
+        <hr>
+        <a href="" class="close"><img src="images/close.svg" alt="close"></a>
+        <ul>
+          <li><a href="index.html"><span>00</span>Home</a></li>
+          <li class="active" ><a href="destination.html"><span>01</span>Destination</a></li>
+          <li><a href="crew.html"><span>02</span>Crew</a></li>
+          <li><a href="technology.html"><span>03</span>Technology</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+  <main>
+    <div class="hero">
+      <div class="heroImgDiv">
+        <h5 class=""><span>01</span> Pick your destination</h5>
+        <div class="destImg">
+          <img src="assets/destination/image-moon.png" alt="">
+        </div>
+      </div>
+      <div class="heroText">
+        <div class="destMenu">
+          <ul>
+            <li class="active"><a href="">moon</a></li>
+            <li><a href="">mars</a></li>
+            <li><a href="">europa</a></li>
+            <li><a href="">titan</a></li>
+          </ul>
+        </div>
+        <h1 class="heading3">moon</h1>
+        <p class="destParagraph">
+          See our planet as you’ve never seen it before. A perfect relaxing trip away to help 
+          regain perspective and come back refreshed. While you’re there, take in some history 
+          by visiting the Luna 2 and Apollo 11 landing sites.
+        </p>
+        <hr>
+        <div class="timDistDiv">
+          <div class="distance">
+            <h6 class="subheading2">Avg. distance</h6>
+            <p class="subheading1">384,400 km</p>
+          </div>
+          <div class="time">
+            <h6 class="subheading2">Est. travel time</h6>
+            <p class="subheading1">384,400 km</p>
+          </div>
+        </div>
+      </div>
+      <!-- destination-moon -->
+    </div>
+  </main>
+</body>
+<script src="scripts/nav.js"></script>
+<script>
+  const destListMenu=document.querySelectorAll('.destMenu ul li');
+  const destImg=document.querySelector('.destImg img');
+  const destHeading=document.querySelector('.heading3');
+  const destParagraph=document.querySelector('.destParagraph');
+  const distance=document.querySelector('.distance p');
+  const time=document.querySelector('.time p');
+
+  class Destination{
+    constructor(name,img,heading,paragraph,distance,time){
+      this.name=name;
+      this.img=img;
+      this.heading=heading;
+      this.paragraph=paragraph;
+      this.distance=distance;
+      this.time=time;
+    }
+  }
+
+  const DestMoon= new Destination('moon','assets/destination/image-moon.png','moon','See our planet as you’ve never seen it before. A perfect relaxing trip away to help regain perspective and come back refreshed. While you’re there, take in some history by visiting the Luna 2 and Apollo 11 landing sites.','384,400 km','3 days');
+  
+  const DestMars= new Destination('mars','assets/destination/image-mars.png','mars','Don’t forget to pack your hiking boots. You’ll need them to tackle Olympus Mons, the tallest planetary mountain in our solar system. It’s two and a half times the size of Everest!','225 mil. km','9 months');
+
+  const DestEuropa= new Destination('europa','assets/destination/image-europa.png','europa','The smallest of the four Galilean moons orbiting Jupiter, Europa is a winter lover’s dream. With an icy surface, it’s perfect for a bit of ice skating, curling, hockey, or simple relaxation in your snug wintery cabin.','628 mil. km','3 years');
+  
+  const DestTitan= new Destination('titan','assets/destination/image-titan.png','titan','The only moon known to have a dense atmosphere other than Earth, Titan is a home away from home (just a few hundred degrees colder!). As a bonus, you get striking views of the Rings of Saturn.','1.6 bil. km','7 years');
+  
+  const destinations=[DestMoon,DestMars,DestEuropa,DestTitan];
+
+  function changeDest(index){
+    destImg.src=destinations[index].img;
+    destHeading.innerHTML=destinations[index].heading;
+    destParagraph.innerHTML=destinations[index].paragraph;
+    distance.innerHTML=destinations[index].distance;
+    time.innerHTML=destinations[index].time;
+  }
+
+  destListMenu.forEach((dest,index)=>{
+    dest.addEventListener('click',(e)=>{
+      e.preventDefault();
+      destListMenu.forEach((item)=>{
+        item.classList.remove('active');
+      })
+      dest.classList.add('active');
+      changeDest(index);  
+    })
+  })
+</script>
+
+</html>
